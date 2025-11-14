@@ -11,7 +11,13 @@ function App() {
     setTodoList([...newList]);
   }
   const updateHandler = (index, data) => {
-
+    const updated = window.prompt('Update task', data);
+    if (updated === null) return;
+    const trimmed = updated.trim();
+    if (trimmed === '') return;
+    const newList = [...todoList];
+    newList[index] = trimmed;
+    setTodoList(newList);
   }
   return (
     <div className="todo-list">
@@ -20,7 +26,7 @@ function App() {
         <li key={index}>
           {data}
           <button onClick={() => deleteHandler(index)}>DEL</button>
-          <button onClick={() => updateHandler(index, data)}>DEL</button>
+          <button onClick={() => updateHandler(index, data)}>EDIT</button>
         </li>)}
       <InputToDo inputHandler={inputHandler} />
     </div>

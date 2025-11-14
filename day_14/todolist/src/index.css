@@ -1,68 +1,68 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root{
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --accent: #4b7bec;
+  --muted: #6b7280;
 }
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+html,body,#root{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background: var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-a:hover {
-  color: #535bf2;
+.todo-list{
+  width: 360px;
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(31,41,55,0.08);
 }
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+.todo-list h2{
+  margin:0 0 12px 0;
+  font-size:18px;
+  letter-spacing:0.6px;
+  color: #111827;
+  text-align:center;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.todo-list ul{list-style:none;padding:0;margin:0 0 12px 0}
+.todo-list li{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid #eef2f7;
+  margin-bottom:8px;
+  background:linear-gradient(180deg, #fff, #fafafa);
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.todo-list li button{
+  margin-left:8px;
+  border:0;
+  background:transparent;
+  color:var(--accent);
+  cursor:pointer;
+  font-weight:600;
 }
-button:hover {
-  border-color: #646cff;
+.input-todo{
+  display:flex;
+  gap:8px;
+  margin-top:6px;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.input-todo input{
+  flex:1;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid #e6eef8;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.input-todo button{
+  padding:8px 12px;
+  border-radius:8px;
+  border:0;
+  background:var(--accent);
+  color:#fff;
+  cursor:pointer;
+  font-weight:700;
 }
